@@ -6052,11 +6052,11 @@ tbody.collapse.in {
   }
 }
 .navbar-default {
-  background-color: #fff;
-  border-color: #eee;
+  background-color: #0072D0;
+  border-color: #0072D0;
 }
 .navbar-default .navbar-brand {
-  color: #333;
+  color: #ffffff;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
   color: #1a1a1a;

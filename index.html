@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
+    <meta name="robots" content="noindex,nofollow">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,15 +65,120 @@
 </head>
 
 <body>
+
+    <header>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">ISMIR 2018 Demo Page</a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <div class="page-header" id="banner">
             <div class="row">
                 <div class="col-lg-8 col-md-7 col-sm-6">
-                    <h1>Test</h1>
-                    <p class="lead">Test Title.</p>
-                </div>
-            </div>
+                    This is the accompanying web page for the following paper:
+					<h1>Generation of Singing F0 Contours from Musical Note Sequences Based on WaveNet</h1>
+                    <!-- <p class="lead">Abstract</p> -->
+				</div>
+
+			</div>
+			<div class="row">
+				<section id="main_content" class="inner">
+					<!-- Abstract -->
+					<div class="page-header">
+						<h2 id="abst">Abstract</h2>
+					</div>
+
+					<p>
+						 This paper describes a method that can recursively generate a continuous F0 contour of a singing voice from a monophonic
+						sequence of musical notes (musical score) by using a deep neural autoregressive model called WaveNet. Real F0 contours include
+						complicated temporal and frequency fluctuations caused by singing expressions such as vibrato and portamento. Although hidden
+						Markov models (HMMs) have often been used for explicitly representing the F0 dynamics, it is difficult to generate realistic
+						F0 contours due to the poor representation capability of the HMMs. To overcome this limitation, WaveNet, which was invented
+						for modeling raw waveforms in an unsupervised manner, was recently used for generating singing F0 contours from a musical
+						score with lyrics in a supervised manner. Inspired by this attempt, we investigate the capability of WaveNet for generating
+						singing F0 contours <i>without</i> using lyric information. Our method conditions WaveNet on pitch and contextual features
+						of a musical score and minimizes the square error between target and output F0s on the log-frequency axis instead of using
+						the cross-entropy loss. The experimental results showed that these techniques improved the quality of generated F0 contours.
+					</p>
+
+					<p>
+						You can get the latest version of our paper from here:
+						<a href="paper/ismir2018.pdf" target="_blank">[PDF]</a>
+					</p>
+
+					<!-- Demo -->
+					<div class="page-header">
+						<h2 id="demo">Demo</h2>
+                    </div>
+
+                    <p>
+                        Example results of singing F0 contours
+                         generated from musical note sequences
+                         based on original WaveNet and our method
+                         are shown below.
+                        The input musical note sequences are
+                         obtained from the annotation data of RWC popular music database [1, 2].
+                    </p>
+
+                    <p>
+                        <h3>Example 1 (RWC-MDB-P-2001 No. 1)</h3>
+                        <h4>Input musical note sequence</h4>
+                        <audio src="./sound/scoreseg.wav" controls></audio>
+                        <h4>Original WaveNet</h4>
+                        <audio src="./sound/baseseg.wav" controls></audio>
+                        <h4>Our method</h4>
+                        <audio src="./sound/future_lossseg.wav" controls></audio>
+                    </p>
+
+                    <p>
+                        <h3>Example 2 (RWC-MDB-P-2001 No. 8)</h3>
+                        <h4>Input musical note sequence</h4>
+                        <audio src="./sound/score_8_1.wav" controls></audio>
+                        <h4>Original WaveNet</h4>
+                        <audio src="./sound/base_8_1.wav" controls></audio>
+                        <h4>Our method</h4>
+                        <audio src="./sound/fl_8_1.wav" controls></audio>
+                    </p>
+
+                    <p>
+                        <h3>Example 3 (RWC-MDB-P-2001 No. 9)</h3>
+                        <h4>Input musical note sequence</h4>
+                        <audio src="./sound/score_9_1.wav" controls></audio>
+                        <h4>Original WaveNet</h4>
+                        <audio src="./sound/base_9_1.wav" controls></audio>
+                        <h4>Our method</h4>
+                        <audio src="./sound/fl_9_1.wav" controls></audio>
+                    </p>
+
+                    <p>
+                        <h3>Example 4 (RWC-MDB-P-2001 No. 15)</h3>
+                        <h4>Input musical note sequence</h4>
+                        <audio src="./sound/score_15_1.wav" controls></audio>
+                        <h4>Original WaveNet</h4>
+                        <audio src="./sound/base_15_1.wav" controls></audio>
+                        <h4>Our method</h4>
+                        <audio src="./sound/fl_15_1.wav" controls></audio>
+                    </p>
+
+                    <h2>Reference</h2>
+                    [1] M. Goto. Aist annotation for the RWC music database. In The 7th International Conference on Music Information Retrieval
+                    (ISMIR 2006), pages 359–360, 2006. </br>
+                    [2] M. Goto, H. Hashiguchi, T. Nishimura, and R. Oka. RWC music database: Popular, classical and jazz music databases. In
+                    The 3rd International Conference on Music Information Retrieval (ISMIR 2002), pages 287– 288, 2002.
+				</section>
+			</div>
         </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
